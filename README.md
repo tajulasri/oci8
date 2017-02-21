@@ -35,7 +35,7 @@ $ composer require jpina/oci8
 Connect to a database, execute a query and fetch a row:
 
 ``` php
-$db = new Jpina\Oci8Connection('username', 'password', '//localhost:1521/XE');
+$db = new Jpina\Oci8\Oci8Connection('username', 'password', '//localhost:1521/XE');
 $statement = $db->parse('SELECT * FROM dual');
 $statement->execute();
 $row = $statement->fetchAssoc();
@@ -45,7 +45,7 @@ Handing errors
 
 ```php
 try {
-    $db = new Jpina\Oci8Connection('username', 'password', '//localhost:1521/XE');
+    $db = new Jpina\Oci8\Oci8Connection('username', 'password', '//localhost:1521/XE');
     // Closing database to force an error on next statement
     $db->close();
     // This statement will throw an Oci8Exception since there is no active connection
